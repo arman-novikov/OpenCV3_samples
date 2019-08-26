@@ -150,7 +150,7 @@ int Chapter8::exer_2()
 {
     static constexpr char winname[] = "pict";
     static const cv::Mat orig = cv::imread(MetaChapter::PHOTO_PATH); // cashed
-    cv::Point click_point;
+    cv::Point ;
     cv::Mat disp;
     orig.copyTo(disp);
     struct on_mouse_t{
@@ -277,9 +277,9 @@ int Chapter8::exer_3()
             if (i == threads_count - 1)
                 end_row = roi.rows;
 
-            workers.push_back((std::make_unique<std::thread>
+            workers.push_back(std::make_unique<std::thread>
                                         (_summator, std::ref(roi), start_row, end_row,
-                                         std::ref(snitches[static_cast<size_t>(i)]))));
+                                         std::ref(snitches[static_cast<size_t>(i)])));
         }
         for (size_t i = 0; i < static_cast<size_t>(threads_count); ++i)  {
             workers[i]->join();
