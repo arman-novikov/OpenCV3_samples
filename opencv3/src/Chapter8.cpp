@@ -150,7 +150,7 @@ int Chapter8::exer_2()
 {
     static constexpr char winname[] = "pict";
     static const cv::Mat orig = cv::imread(MetaChapter::PHOTO_PATH); // cashed
-    cv::Point ;
+    cv::Point click_point;
     cv::Mat disp;
     orig.copyTo(disp);
     struct on_mouse_t{
